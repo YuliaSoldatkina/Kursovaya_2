@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kursovaya-2"
+version = "0.1.0"
+description = ""
+authors = ["Yulia Soldatkina <yulia.soldatkina22@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.14"
+requests = "^2.34.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+]
