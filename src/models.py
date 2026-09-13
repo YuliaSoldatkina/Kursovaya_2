@@ -32,8 +32,7 @@ class Aeroplane:
             raise TypeError("Altitude должен быть числом")
         if self.velocity < 0:
             raise ValueError("Velocity не может быть отрицательным")
-        if self.altitude < 0:
-            raise ValueError("Altitude не может быть отрицательным")
+        # Altitude может быть отрицательным (ниже уровня моря)
 
     def __lt__(self, other: "Aeroplane") -> bool:
         """Сравнение по высоте (для сортировки)."""

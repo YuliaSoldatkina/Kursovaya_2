@@ -48,13 +48,13 @@ class AeroplanesAPI(BaseAPI):
         self.nominatim_url = "https://nominatim.openstreetmap.org/search"
         self.opensky_url = "https://opensky-network.org/api/states/all"
         self.headers = {
-            "User-Agent": "KursovayaProject/1.0 (yulia.soldatkina@example.com)"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
         }
 
     def get_data(self, url: str, params: dict | None = None) -> Any:
         """Получить данные по URL с параметрами."""
         try:
-            response = requests.get(url, params=params, headers=self.headers)
+            response = requests.get(url, params=params, headers=self.headers, timeout=10)
             response.raise_for_status()
             return response.json()
         except requests.RequestException as error:
